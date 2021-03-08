@@ -1,7 +1,7 @@
 /***********************************************************************
-Below we've declared the Car constructor function that has a property 
-representing speed. Write an instance method on the Car's prototype 
-named `drive(newSpeed)`. This method should set the speed to the passed in 
+Below we've declared the Car constructor function that has a property
+representing speed. Write an instance method on the Car's prototype
+named `drive(newSpeed)`. This method should set the speed to the passed in
 argument, and then return the present speed.
 
 **Hint**: Use the keyword *this*!
