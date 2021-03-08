@@ -7,7 +7,7 @@ Write four methods on the Calculator's prototype named:
 2. subtract(num) - subtract the num arg from the total
 3. divide(num) - divide the total by the num arg
 4. multiply(num) - multiply the total by the num arg
-
++
 Each of the above methods should return the total.
 
 Examples:
@@ -23,7 +23,26 @@ calculator.total // => returns 30
 
 function Calculator() {
 	this.total = 0;
+	this.add = function(num){
+		return this.total += num;
+	}
+	this.subtract = function(num) {
+		return this.total -= num
+	}
+	this.multiply = function(num) {
+		return this.total *= num;
+	}
+	this.divide = function(num) {
+		return this.total /= num;
+	}
+	return this.total;
 }
 
+let calculator = new Calculator();
+calculator.add(50); // => returns 50
+calculator.subtract(35); // => returns 15
+calculator.multiply(10); // => returns 150
+calculator.divide(5); // => returns 30
+console.log(calculator.total) // => returns 30
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = Calculator;
