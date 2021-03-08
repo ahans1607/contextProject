@@ -22,7 +22,20 @@ console.log(car) // -> {speed: 100, drive: ƒ}
 
 function Car() {
 	this.speed = 0
+	this.drive = function newSpeed(value){
+		return this.speed = value
+	}
 }
+
+let car = new Car();
+car.drive(10); // => returns 10
+console.log(car) // => {speed: 10, drive: ƒ}
+
+car.drive(50); // => returns 50
+console.log(car) // -> {speed: 50, drive: ƒ}
+
+car.drive(100); // => returns 100
+console.log(car) // -> {speed: 100, drive: ƒ}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = Car;
