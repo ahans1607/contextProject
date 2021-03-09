@@ -7,24 +7,28 @@ Write two methods on the Calculator's prototype named:
 1. modulo(num) - sets the total to the remainder of division with the arg number
 2. squared() - multiplies the total by its self
 
-Each of the above methods should return the total.
-
-Example:
-let fancyCalculator = new FancyCalculator();
-fancyCalculator.setTotal(5) // => returns 5
-fancyCalculator.squared() // => returns 25
-fancyCalculator.modulo(4) // => returns 1
-fancyCalculator.total // => returns 1
 ***********************************************************************/
 
 function FancyCalculator() {
 	this.total = 0;
+	this.squared = function(num){
+		return Math.pow(this.total, 2)
+	}
+	this.modulo = function(num) {
+		return this.total %= num	
+	}
 }
 
 FancyCalculator.prototype.setTotal = function(num) {
 	this.total = num;
 	return this.total;
 }
+
+let fancyCalculator = new FancyCalculator();
+console.log(fancyCalculator.setTotal(5)) // => returns 5
+console.log(fancyCalculator.squared()) // => returns 25
+console.log(fancyCalculator.modulo(4)) // => returns 1
+console.log(fancyCalculator.total) // => returns 1
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = FancyCalculator;
